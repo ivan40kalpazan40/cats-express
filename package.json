@@ -14,6 +14,7 @@
     "express-handlebars": "^5.3.4"
   },
   "devDependencies": {
-    "nodemon": "^2.0.13"
+    "nodemon": "^2.0.13",
+    "uniqid": "^5.4.0"
   }
 }
