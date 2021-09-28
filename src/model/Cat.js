@@ -27,5 +27,19 @@ class Cat {
   static addOne(cat) {
     Cat.cats.push(cat);
   }
+
+  // delete cat from cats
+  static deleteCat(cat) {
+    const newCat = Cat.cats.filter((x) => x.id !== cat.id);
+    Cat.cats = newCat;
+  }
+
+  // edit and update
+
+  static update(cat) {
+    const foundCat = Cat.cats.find((x) => x.id === cat.id);
+    const index = Cat.cats.indexOf(foundCat);
+    Cat.cats.splice(index, 1, cat);
+  }
 }
 module.exports = Cat;
