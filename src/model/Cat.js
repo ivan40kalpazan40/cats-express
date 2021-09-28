@@ -5,7 +5,7 @@ class Cat {
       id: 'grf4g3cwacr34fg',
       name: 'Sally',
       description: 'Nice cat',
-      upload: 'img.jpg',
+      upload: 'rubik.jpg',
       breed: 'Anghoran',
     },
   ];
