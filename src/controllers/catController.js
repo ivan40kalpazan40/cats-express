@@ -31,7 +31,8 @@ const createCat = (req, res) => {
 
 const editCatPage = (req, res) => {
   const id = req.params.id;
-  res.render('editCat');
+  const cat = catService.findCat(id);
+  res.render('editCat', { cat });
 };
 
 const shelterCatPage = (req, res) => {

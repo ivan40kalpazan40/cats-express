@@ -15,9 +15,14 @@ const uploadImage = (oldPath, newPath) => {
   });
 };
 
+const findCat = (id) => {
+  return Cat.cats.find((cat) => cat.id === id);
+};
+
 module.exports = {
   getAll,
   getOne,
   addCat,
   uploadImage,
+  findCat,
 };
