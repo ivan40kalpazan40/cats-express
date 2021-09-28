@@ -36,4 +36,5 @@ module.exports = {
   uploadImage,
   findCat,
   edit,
+  shelter
 };

@@ -57,6 +57,13 @@ const shelterCatPage = (req, res) => {
   res.render('catShelter', { cat });
 };
 
+const shelterCat = (req, res) => {
+  const id = req.params.id;
+  const cat = catService.findCat(id);
+  catService.shelter(cat);
+  res.redirect('/');
+};
+
 router.get('/add-breed', addBreedPage);
 router.get('/add-cat', addCatPage);
 router.get('/edit/:id', editCatPage);
@@ -64,4 +71,5 @@ router.get('/shelter/:id', shelterCatPage);
 
 router.post('/add-cat', createCat);
 router.post('/edit/:id', catEdit);
+router.post('/shelter/:id', shelterCat);
 module.exports = router;
