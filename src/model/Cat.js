@@ -10,6 +10,15 @@ class Cat {
     },
   ];
 
+  static breeds = [
+    'Siamese',
+    'Anghoran',
+    'American',
+    'Birman',
+    'Egyptian',
+    'Bhengali',
+  ];
+
   constructor(name, description, upload, breed) {
     this.id = uniqid();
     this.name = name;
@@ -40,6 +49,16 @@ class Cat {
     const foundCat = Cat.cats.find((x) => x.id === cat.id);
     const index = Cat.cats.indexOf(foundCat);
     Cat.cats.splice(index, 1, cat);
+  }
+
+  static addBreed(breed) {
+    if (!Cat.breeds.includes(breed)) {
+      Cat.breeds.push(breed);
+    }
+  }
+
+  static getBreeds() {
+    return Cat.breeds.slice();
   }
 }
 module.exports = Cat;
