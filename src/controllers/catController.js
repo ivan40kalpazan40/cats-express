@@ -42,7 +42,8 @@ const createCat = (req, res) => {
 const editCatPage = (req, res) => {
   const id = req.params.id;
   const cat = catService.findCat(id);
-  res.render('editCat', { cat });
+  const breeds = breedService.getBreeds();
+  res.render('editCat', { cat, breeds });
 };
 
 const catEdit = (req, res) => {
