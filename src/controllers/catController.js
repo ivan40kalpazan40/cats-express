@@ -45,15 +45,18 @@ const catEdit = (req, res) => {
     const pathName = files.upload.path;
     const fileName = files.upload.name;
     const newPath = path.resolve(__dirname, '../public/images', fileName);
-    const cat = { id, name, description, upload:fileName, breed };
+    const cat = { id, name, description, upload: fileName, breed };
     catService.edit(cat, pathName, newPath);
     res.redirect('/');
   });
 };
 
 const shelterCatPage = (req, res) => {
-  console.log(`Shelter cat with id - ${req.params.id}`);
+  const id = req.params.id;
+  const cat = catService.findCat(id);
+  res.render('catShelter', { cat });
 };
+
 router.get('/add-breed', addBreedPage);
 router.get('/add-cat', addCatPage);
 router.get('/edit/:id', editCatPage);
