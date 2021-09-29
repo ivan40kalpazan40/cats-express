@@ -58,7 +58,7 @@ class Cat {
   }
 
   static getBreeds() {
-    return Cat.breeds.slice();
+    return Cat.breeds.sort((a, b) => a.localeCompare(b)).slice();
   }
 }
 module.exports = Cat;

@@ -29,6 +29,12 @@ const shelter = (cat) => {
   Cat.deleteCat(cat);
 };
 
+const find = (param) => {
+  let cats = Cat.cats;
+  cats = Cat.cats.filter((x) => x.name.toLowerCase() === param.toLowerCase());
+  return cats;
+};
+
 module.exports = {
   getAll,
   getOne,
@@ -36,5 +42,6 @@ module.exports = {
   uploadImage,
   findCat,
   edit,
-  shelter
+  shelter,
+  find,
 };
