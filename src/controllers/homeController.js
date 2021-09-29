@@ -8,8 +8,7 @@ const renderHome = (req, res) => {
   res.render('index', { cats });
 };
 const showSearch = (req, res) => {
-  const searchParam = req.query;
-  const { search } = searchParam;
+  const { search } = req.query;
   const found = catService.find(search);
   res.render('search', { found });
 };
